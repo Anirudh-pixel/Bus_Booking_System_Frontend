@@ -11,7 +11,7 @@ const UserBooking = ({ token, userId }) => {
             if (!token || !userId) return;
 
             try {
-                const response = await axios.get(`http://localhost:8000/api/user/${userId}/bookings/`,
+                const response = await axios.get(`https://travease-backend.onrender.com/api/user/${userId}/bookings/`,
                     {
                         headers: {
                             Authorization: `Token ${token}`
@@ -31,7 +31,7 @@ const UserBooking = ({ token, userId }) => {
         if (!window.confirm('Are you sure you want to cancel this booking?')) return;
 
         try {
-            await axios.delete(`http://localhost:8000/api/booking/${bookingId}/`, {
+            await axios.delete(`https://travease-backend.onrender.com/api/booking/${bookingId}/`, {
                 headers: {
                     Authorization: `Token ${token}`
                 }

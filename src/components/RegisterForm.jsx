@@ -16,7 +16,7 @@ const RegisterForm = () => {
     const handleSubmit =async(e)=>{
         e.preventDefault()
         try{
-            await axios.post('http://localhost:8000/api/register/', form);
+            await axios.post('https://travease-backend.onrender.com/api/register/', form);
             setMessage('Registration successful');
         }catch(error){
              const errMsg = error.response?.data?.username || error.message;

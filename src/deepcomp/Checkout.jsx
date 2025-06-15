@@ -22,7 +22,7 @@ const Checkout = ({ token }) => {
     useEffect(() => {
         const checkSeat = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/seats/${seatId}`);
+                const response = await axios.get(`https://travease-backend.onrender.com/api/seats/${seatId}`);
                 if (response.data.is_booked) {
                     alert("Seat already booked. Please choose another seat.");
                     setIsSeatBooked(true);
@@ -49,7 +49,7 @@ const Checkout = ({ token }) => {
         }
 
         try {
-            await axios.post("http://localhost:8000/api/booking/", 
+            await axios.post("https://travease-backend.onrender.com/api/booking/", 
                 {
                     seat: seatId,
                     name: form.name,
